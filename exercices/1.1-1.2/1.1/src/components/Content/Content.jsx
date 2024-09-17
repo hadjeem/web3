@@ -1,5 +1,6 @@
 import Part from "../Part/Part"
 
+
 const Content = (props) => {
     return (
       <div>
