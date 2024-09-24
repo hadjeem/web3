@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ClickCounter = ({title}) => {
+const ClickCounter = ({title,message }) => {
 
     const [count, setCount] = useState(0);
 
@@ -15,6 +15,8 @@ const ClickCounter = ({title}) => {
       <button onClick={handleClick}>
         count is {count}
       </button>
+        {count>= 10 && <p >{message}</p>}
+        
     </div>
   );
 };
