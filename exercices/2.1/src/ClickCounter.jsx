@@ -2,12 +2,14 @@ import { useState } from "react";
 
 const ClickCounter = ({title,message,showMessage}) => {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(JSON.parse(localStorage.getItem('count')) || 0);
     const [ showOverMessgae, setShowOverMessage] = useState(false);
 
     const handleClick = () => {
         console.log(`value of count before click: ${count}`);
-        setCount(count + 1);
+        const newCount = count + 1;
+        setCount(newCount);
+        localStorage.setItem("count", JSON.stringify(newCount));
     }
 
     const handleMouseEnter = () => {
