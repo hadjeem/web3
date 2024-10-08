@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import Statistics from './Statistics'
 import Button from './Button'
+import Loading from './Loading'
 
 const App = () => {
   // save clicks of each button to its own state
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => setLoading(false), 3000);
+  if (loading) return <Loading />;
 
   const handleGood = (e)=> {
     if(e.target.className === 'good'){
