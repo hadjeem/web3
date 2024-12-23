@@ -6,6 +6,7 @@ import Footer from "components/Footer/Footer";
 const App = () => {
   const defaultMovies = [
     {
+      id:1,
       title: "Shang-Chi and the Legend of the Ten Rings",
       director: "Destin Daniel Cretton",
       duration: 132,
@@ -16,6 +17,7 @@ const App = () => {
       budget: 150,
     },
     {
+      id:2,
       title: "The Matrix",
       director: "Lana Wachowski, Lilly Wachowski",
       duration: 136,
@@ -26,6 +28,7 @@ const App = () => {
       budget: 63,
     },
     {
+      id:3,
       title: "Summer Wars",
       director: "Mamoru Hosoda",
       duration: 114,
@@ -36,6 +39,7 @@ const App = () => {
       budget: 18.7,
     },
     {
+      id:4,
       title: "The Meyerowitz Stories",
       director: "Noah Baumbach",
       duration: 112,
@@ -45,6 +49,7 @@ const App = () => {
         "An estranged family gathers together in New York City for an event celebrating the artistic work of their father.",
     },
     {
+      id:5,
       title: "her",
       director: "Spike Jonze",
       duration: 126,
@@ -59,7 +64,7 @@ const App = () => {
   const [movies, setMovies] = useState(defaultMovies);
 
   const onMovieAdded = (newMovie) => {
-    setMovies([...movies, newMovie]);
+    setMovies([...movies, { ...newMovie, id: movies.length + 1 }]);
   };
 
   return (
