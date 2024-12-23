@@ -1,11 +1,12 @@
-import App from './components/App/App.jsx'
-import HomePage from './components/Pages/HomePage.jsx'
-import CinemaPage from './components/Pages/CinemaPage.jsx'
-import MovieListPage from './components/Pages/MovieListPage.jsx'
+import App from './components/App/App.jsx';
+import HomePage from './components/Pages/HomePage.jsx';
+import CinemaPage from './components/Pages/CinemaPage.jsx';
+import MovieListPage from './components/Pages/MovieListPage.jsx';
+import AddMoviePage from './components/Pages/AddMoviePage.jsx';
 import ReactDOM from "react-dom";
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import './index.css'
+import './index.css';
 
 const router = createBrowserRouter([
   {
@@ -23,9 +24,13 @@ const router = createBrowserRouter([
       {
         path: "movies",
         element: <MovieListPage />,
+      },
+      {
+        path: "add-movie",
+        element: <AddMoviePage />,
       }
     ]
-    }
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
