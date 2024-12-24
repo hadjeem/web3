@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Input, Button } from "antd";
 import "./AddMovieForm.css";
 
 const AddMovieForm = ({ onMovieAdded }) => {
@@ -19,11 +20,12 @@ const AddMovieForm = ({ onMovieAdded }) => {
     setDescription("");
     setBudget(0);
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label>Titre :</label>
-        <input
+        <Input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -32,7 +34,7 @@ const AddMovieForm = ({ onMovieAdded }) => {
       </div>
       <div>
         <label>Réalisateur :</label>
-        <input
+        <Input
           type="text"
           value={director}
           onChange={(e) => setDirector(e.target.value)}
@@ -41,7 +43,7 @@ const AddMovieForm = ({ onMovieAdded }) => {
       </div>
       <div>
         <label>Durée :</label>
-        <input
+        <Input
           type="number"
           value={duration}
           onChange={(e) => setDuration(parseInt(e.target.value))}
@@ -50,7 +52,7 @@ const AddMovieForm = ({ onMovieAdded }) => {
       </div>
       <div>
         <label>{"URL de l'image :"}</label>
-        <input
+        <Input
           type="text"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
@@ -58,20 +60,20 @@ const AddMovieForm = ({ onMovieAdded }) => {
       </div>
       <div>
         <label>Description :</label>
-        <textarea
+        <Input.TextArea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <div>
         <label>Budget :</label>
-        <input
+        <Input
           type="number"
           value={budget}
           onChange={(e) => setBudget(parseInt(e.target.value))}
         />
       </div>
-      <button type="submit">Ajouter</button>
+      <Button type="primary" htmlType="submit">Ajouter</Button>
     </form>
   );
 };
