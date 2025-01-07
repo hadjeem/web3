@@ -21,6 +21,30 @@ const Header = ({ title, version }) => {
   );
 };
 ```
+## Chapitre 4 : Gestion des formulaires, useEffect(), Axios...
+
+useEffect est utilisé quand on fait des appels a l'api
+Attention ne pas oublier de catch les erreurs
+ex.   const initialLoad = () => {
+    PersonsAPI
+      .getAll()
+      .then(persons => setPersons(persons))
+      .catch(error => console.warn(error))
+  }
+  useEffect(initialLoad, [])
+  si on mets un tableau le useeffect se lance des le lancement de l'application
+
+  ```bash
+useEffect(() => {
+  console.log(`Effet exécuté, dépendance: ${count}`);
+}, [count]);
+```
+Si le tableau contient des dépendances (par ex. [count]), l'effet est exécuté :
+
+    Lors du premier rendu.
+    Chaque fois qu'une des dépendances dans le tableau change (ici, quand count change).
+
+Cela permet de réagir uniquement aux changements spécifiques, optimisant les performances.
 
 ## Chapitre 8 : Installation des dépendances Apollo Server et GraphQL
 
