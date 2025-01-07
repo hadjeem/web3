@@ -17,3 +17,6 @@ Apollo client
 ```bash
 npm install @apollo/client graphql
 ```
+
+# Partie front
+tu dois set up apollo client dans le fichier App.jsx, et il faut que extrait les queries GraphQL dans un fichier a part que tu peux nommer gql-queries.js
