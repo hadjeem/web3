@@ -46,6 +46,23 @@ Si le tableau contient des dépendances (par ex. [count]), l'effet est exécuté
 
 Cela permet de réagir uniquement aux changements spécifiques, optimisant les performances.
 
+## Chapitre 5
+La librairie React Context a pour objectifs de régler un problème que vous avez probablement déjà ressenti durant les exercices précédent et qui s'appelle le "prop drilling"
+
+### Etape 1 : Créer un fichier contexte à mettre dans /src/contexts/
+### Etape 2 : Définir le state et ses fonctions de manipulation du state
+### Etape 3 : Broadcaster le contexte à l'aide du Provider
+On peut maintenant placer le ProviderWrapper quelque part dans l'arbre des composants. On va typiquement faire ceci dans un composant qu'on placera au dessus de App, par exemple AppLoader
+
+Attention, à cette étape-ci, vous devez vous assurer que le point d'entrée de votre programme, main.jsx (application Vite), fait bien appel à AppLoader et plus à App. Votre main.jsx ressemblera à cela :
+```bash
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<AppLoader />);
+```
+
+### Etape 4 : Consommer le contexte dans un composant
+On peut maintenant utiliser le hook useContext dans n'importe quel composant sous l'AppLoader, par exemple dans un fichier /src/components/FoobarButton : 
+
 ## Chapitre 8 : Installation des dépendances Apollo Server et GraphQL
 
 Pour installer les dépendances nécessaires à Apollo Server et GraphQL, utilisez la commande suivante :
