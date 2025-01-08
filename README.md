@@ -113,6 +113,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 ```
+tu ne dois pas utiliser la librairie de react pour le contexte
 
 ## Chapitre 8 : Installation des dépendances Apollo Server et GraphQL
 
