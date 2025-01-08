@@ -63,6 +63,57 @@ root.render(<AppLoader />);
 ### Etape 4 : Consommer le contexte dans un composant
 On peut maintenant utiliser le hook useContext dans n'importe quel composant sous l'AppLoader, par exemple dans un fichier /src/components/FoobarButton : 
 
+## chapitre 7: router
+voici comment doit etre set up un router : 
+fichier mais.jsx
+```bash
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import App from "components/App/App";
+import HomePage from "components/Pages/HomePage";
+import CinemaPage from "components/Pages/CinemaPage";
+import MovieListPage from "components/Pages/MovieListPage";
+import AddMoviePage from "components/Pages/AddMoviePage";
+import MoviePage from "components/Pages/MoviePage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "",
+        element: <HomePage />,
+      },
+      {
+        path: "cinemas",
+        element: <CinemaPage />,
+      },
+      {
+        path: "movies",
+        element: <MovieListPage />,
+      },
+      {
+        path: "movies/add",
+        element: <AddMoviePage />,
+      },
+      {
+        path: "movies/:id",
+        element: <MoviePage />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
+
 ## Chapitre 8 : Installation des dépendances Apollo Server et GraphQL
 
 Pour installer les dépendances nécessaires à Apollo Server et GraphQL, utilisez la commande suivante :
