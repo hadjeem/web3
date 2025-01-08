@@ -137,3 +137,28 @@ npm install @apollo/client graphql
 # Partie front
 tu dois set up apollo client dans le fichier App.jsx, et il faut que extrait les queries GraphQL dans un fichier a part que tu peux nommer gql-queries.js
 le fichier gql-queries se trouve dans le dossier src
+
+# bonus
+```bash
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  settings: { react: { version: '18.2' } },
+  plugins: ['react-refresh'],
+  rules: {
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+    'react/prop-types':0
+  },
+}
+``
